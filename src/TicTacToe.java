@@ -35,9 +35,12 @@ public class TicTacToe {
         }
         System.out.println(boardText);
     }
-    /*
-    private static boolean isValidMove(int row, int col) {
 
+    private static boolean isValidMove(int row, int col) {
+        if ((row > 3 || row < 1) || (col > 3 || col < 1)) {
+            return false;
+        }
+        return true;
     }
 
     private static boolean isWin(String player) {
@@ -45,9 +48,24 @@ public class TicTacToe {
     }
 
     private static boolean isColWin(String player) {
+        String falttennCols[] = new String[COLS*ROWS];
+
+        int count = 0;
+        for (int i = 0; i < COLS; i++) {
+            for (int y = 0; y < ROWS; y++) {
+                falttennCols[count] = board[y][i];
+                count += 1;
+            }
+        }
+
+
+        int occur = 1;
+        for (String move : falttennCols) {
+            
+        }
 
     }
-
+    /*
     private static boolean isRowWin(String player) {
 
     }
